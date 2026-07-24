@@ -5,7 +5,7 @@ Official [agent skills](https://skills.sh) from [Superset](https://superset.sh) 
 ## Install
 
 ```bash
-npx skills add superset-sh/agent-skills
+npx skills add superset-sh/skills
 ```
 
 ## Skills
