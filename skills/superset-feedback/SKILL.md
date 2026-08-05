@@ -47,12 +47,11 @@ Never submit anything before the user explicitly picks 1 or 2. Loop on edits.
 **Private path:**
 - If `superset feedback --help` exits 0, submit via stdin (note: `--body-file=-` with the equals sign; a space-separated `-` is rejected by the parser):
   ```bash
-  superset feedback submit --type bug --title "..." --body-file=- \
-    --attach /path/to/screenshot.png --diagnostics <<'EOF'
+  superset feedback submit --type bug --title "..." --body-file=- <<'EOF'
   <drafted report>
   EOF
   ```
-  (`--attach` is comma-separated paths, 10MB total; `--diagnostics` only with the user's consent.) The submission is sent from the user's Superset account, a copy is CC'd to them, and the team replies to their account email.
+  Only when the user agreed to them in step 1, add `--attach /path/to/screenshot.png` (comma-separated paths, 10MB total) and/or `--diagnostics`. The submission is sent from the user's Superset account, a copy is CC'd to them, and the team replies to their account email.
 - If the CLI is missing or not logged in (`superset auth whoami` fails), offer `superset auth login` first; if declined, fall back to email: give the user a clickable mailto link (`mailto:support@superset.sh?subject=<url-encoded title>&body=<url-encoded body>`) and also print the raw draft so they can copy it.
 
 **Public path:**

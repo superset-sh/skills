@@ -33,7 +33,7 @@ For each recommendation in order: a two-sentence pitch, then ask (use the ask_us
 
 | Feature | Why it 10x's you | Live setup |
 | --- | --- | --- |
-| Automations | Scheduled agents — triage, changelogs, standups run while you sleep | `superset automations create`, then `automations logs` to review runs |
+| Automations | Scheduled agents — triage, changelogs, standups run while you sleep | `superset automations create`, then `superset automations logs` to review runs |
 | Parallel workspaces | Every task gets an isolated worktree; run several agents at once instead of queueing | `superset workspaces create --project <id>` then `superset agents create --workspace <id> --agent claude --prompt "..."` |
 | PR review workspaces | Check out any PR into its own workspace in one command | `superset workspaces create --pr <number>` |
 | Tasks | A shared queue agents can pick up; track work across sessions | `superset tasks create --title "..."`, `superset tasks update` |
@@ -41,10 +41,10 @@ For each recommendation in order: a two-sentence pitch, then ask (use the ask_us
 | Terminal remote-control | Read and drive any agent's terminal from anywhere | `superset terminals list / read / send` |
 | Custom slash commands | Your repo's own workflows as commands every agent can run | create `.agents/commands/<name>.md` in their repo |
 | MCP servers | Give every workspace agent the same extra tools | add servers to `.mcp.json` at their repo root |
-| Feedback loop | Report bugs or ideas without leaving the agent | try `/superset-feedback` |
+| Feedback loop | Report bugs or ideas without leaving the agent | invoke the `feedback` skill from this plugin |
 
 ## Rules
 
 - The audit is read-only; never create, modify, or delete anything before the user picks "Set it up now" and confirms the specifics.
 - One feature at a time; keep each step short and end it with the ask.
-- Close with a one-line recap of what was set up and what they skipped, so they can come back with `/superset-10x <topic>`.
+- Close with a one-line recap of what was set up and what they skipped, so they can come back and re-invoke this skill with a topic later.

@@ -12,7 +12,7 @@ Answer "what happened while I was away?" from real state, not guesses. Entirely 
 
 - `superset workspaces list` — active workspaces
 - `superset tasks list` — task states
-- `superset terminals list`, then `superset terminals read <id>` for each active agent terminal — the last screen of output shows whether the agent finished, asked a question, or errored
+- Per active workspace: `superset terminals list --workspace <id>`, then `superset terminals read --workspace <id> --terminal <terminalId>` for each agent terminal — the last screen of output shows whether the agent finished, asked a question, or errored
 
 ## 2. Classify each workspace
 
